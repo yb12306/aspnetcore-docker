@@ -4,6 +4,7 @@
 
 trigger:
 - latest
+- 2.*
 - 3.*
 
 resources:
