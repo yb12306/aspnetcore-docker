@@ -3,7 +3,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+- latest
+- 3.*
 
 resources:
 - repo: self
