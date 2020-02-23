@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
 ENV TZ=Asia/Shanghai
 
 # 安装libgdiplus库，用于Excel导出、Fastreport
-RUN apt-get update && apt-get install -y apt-utils libgdiplus libc6-dev xvfb x11vnc x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps libx11-dev && ln -s libgdiplus.so gdiplus.dll
+RUN apt-get update && apt-get install -y apt-utils telnet vim libgdiplus libc6-dev xvfb x11vnc x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps libx11-dev && ln -s libgdiplus.so gdiplus.dll
 
 WORKDIR /app
 EXPOSE 80
