@@ -3,12 +3,8 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 # 设置默认时区
 ENV TZ=Asia/Shanghai
 
-# # http://mirrors.163.com/.help/debian.html
-# ADD sources.list .
-# # 安装libgdiplus库，用于Excel导出
-# RUN mv sources.list /etc/apt/ && apt-get update && apt-get install -y apt-utils libgdiplus libc6-dev
-# 使用海外构建代替163
-RUN apt-get update && apt-get install -y apt-utils libgdiplus libc6-dev
+# 安装libgdiplus库，用于Excel导出、Fastreport
+RUN apt-get update && apt-get install -y apt-utils telnet vim libgdiplus libc6-dev xvfb x11vnc x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps libx11-dev && ln -s libgdiplus.so gdiplus.dll
 
 WORKDIR /app
 EXPOSE 80
