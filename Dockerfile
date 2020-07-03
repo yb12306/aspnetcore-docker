@@ -1,5 +1,5 @@
 #Azure CDN加速
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-bionic AS base
 # 设置默认时区
 ENV TZ=Asia/Shanghai
 ENV LANG C.UTF-8
